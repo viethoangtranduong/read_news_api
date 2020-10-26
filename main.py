@@ -37,6 +37,10 @@ resource_fields = {
 # app
 
 class HelloWorld2(Resource):
+    @app.route('/')
+    def index():
+        return "<h1>Welcome to our server !!</h1>"
+
     @marshal_with(resource_fields)
     def get(self, News_id):
         result = News_model.query.filter_by(id = News_id).first()
@@ -51,11 +55,14 @@ class HelloWorld2(Resource):
         if result:
             abort(409, message = "News id existed")
         
-        article = Article(args['News_url'])
-        article.download()
-        article.parse()
-        article.nlp()
-        News_out = article.text
+        try:
+            article = Article(args['News_url'])
+            article.download()
+            article.parse()
+            article.nlp()
+            News_out = article.text
+        except:
+            News_out = "Cannot read link"
 
         # print("Hoho", args["News_in"])
         News = News_model(News_id = News_id, News_url = args["News_url"],   
@@ -84,8 +91,6 @@ class HelloWorld2(Resource):
         db.session.commit()
 
         return result
-        
-
         
 
     def delete(self, News_id):
