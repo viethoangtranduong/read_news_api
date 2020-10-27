@@ -67,7 +67,7 @@ class HelloWorld2(Resource):
         # print("Hoho", args["News_in"])
         News = News_model(News_id = News_id, News_url = args["News_url"],   
                          News_out = News_out)
-print("line70")
+
         # print("haha", News)
         db.session.add(News)
         db.session.commit()
@@ -92,16 +92,15 @@ print("line70")
 
         return result
         
-print("line95")
     def delete(self, News_id):
         abort_if_News_id_not_existed(News_id)
         del Newss[News_id]
         return "Done", 204
 
 
-print("line102")    
+print("line101")    
 # registering resources
 api.add_resource(HelloWorld2, "/<int:News_id>")
-print("line105")
+print("line104")
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=3001, debug=True)
