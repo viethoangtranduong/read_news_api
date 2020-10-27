@@ -18,7 +18,7 @@ class News_model(db.Model):
     def __repr__(self):
         return f"News(News_id={self.News_id}, News_url={self.News_url}, News_out={self.News_out})" 
 
-# db.create_all() # run_once
+db.create_all() # run_once
 
 News_put_args = reqparse.RequestParser()
 News_put_args.add_argument("News_url", type = str, help = "News_url needed", required = True)
