@@ -103,4 +103,5 @@ print("line101")
 api.add_resource(HelloWorld2, "/<int:News_id>")
 print("line104")
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=3001, debug=True)
+    #app.run(host='0.0.0.0', port=3001, debug=True)
+    app.run(port=5000, debug=True)
