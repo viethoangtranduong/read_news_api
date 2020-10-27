@@ -9,7 +9,7 @@ app = Flask(__name__)
 api = Api(app)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///database.db"
 db = SQLAlchemy(app)
-
+print("line12")
 class News_model(db.Model):
     News_id = db.Column(db.Integer, primary_key = True)
     News_url = db.Column(db.String, nullable = False)
@@ -19,7 +19,7 @@ class News_model(db.Model):
         return f"News(News_id={self.News_id}, News_url={self.News_url}, News_out={self.News_out})" 
 
 db.create_all() # run_once
-
+print("line22")
 News_put_args = reqparse.RequestParser()
 News_put_args.add_argument("News_url", type = str, help = "News_url needed", required = True)
 
@@ -35,7 +35,7 @@ resource_fields = {
 
 
 # app
-
+print("line38")
 class HelloWorld2(Resource):
     @app.route('/')
     def index():
@@ -67,7 +67,7 @@ class HelloWorld2(Resource):
         # print("Hoho", args["News_in"])
         News = News_model(News_id = News_id, News_url = args["News_url"],   
                          News_out = News_out)
-
+print("line70")
         # print("haha", News)
         db.session.add(News)
         db.session.commit()
@@ -92,16 +92,16 @@ class HelloWorld2(Resource):
 
         return result
         
-
+print("line95")
     def delete(self, News_id):
         abort_if_News_id_not_existed(News_id)
         del Newss[News_id]
         return "Done", 204
 
 
-    
+print("line102")    
 # registering resources
 api.add_resource(HelloWorld2, "/<int:News_id>")
-
+print("line105")
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=3001, debug=True)
