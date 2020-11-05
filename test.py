@@ -2,7 +2,7 @@ import requests
 import numpy as np
 
 
-BASE = "http://127.0.0.1:3001/"
+BASE = "http://127.0.0.1:8000/"
 # BASE = "https://capstone-2021.herokuapp.com/"
 
 # response = requests.patch(BASE + "2", {"txt": "whatthefuck"})
