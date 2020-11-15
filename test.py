@@ -2,17 +2,10 @@ import requests
 import numpy as np
 
 
-<<<<<<< Updated upstream
-# BASE = "http://127.0.0.1:5000/"
-=======
-<<<<<<< HEAD
+
 BASE = "http://127.0.0.1:3001/"
-=======
-# BASE = "http://127.0.0.1:5000/"
->>>>>>> cf6783f1bcbac07850875b183117e57361e536a8
->>>>>>> Stashed changes
 # BASE = "https://capstone-2021.herokuapp.com/"
-BASE = 'http://viethoangtranduong.pythonanywhere.com/'
+# BASE = 'http://viethoangtranduong.pythonanywhere.com/'
 # response = requests.patch(BASE + "2", {"txt": "hallo"})
 # print(response.json())
 
