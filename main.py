@@ -94,7 +94,7 @@ class HelloWorld2(Resource):
         
     def delete(self, News_id):
         abort_if_News_id_not_existed(News_id)
-        del Newss[News_id]
+        del News[News_id]
         return "Done", 204
 
 
@@ -102,6 +102,6 @@ print("line101")
 # registering resources
 api.add_resource(HelloWorld2, "/<int:News_id>")
 print("line104")
-# if __name__ == "__main__":
-#     app.run(host='0.0.0.0', port=3001, debug=True)
-#     # app.run(port=5000, debug=True)
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=3001, debug=True)
+    app.run(port=5000, debug=True)
