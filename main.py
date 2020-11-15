@@ -104,12 +104,4 @@ api.add_resource(HelloWorld2, "/<int:News_id>")
 print("line104")
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=3001, debug=True)
-<<<<<<< Updated upstream
-    app.run(port=5000, debug=True)
-=======
-<<<<<<< HEAD
     # app.run(port=5000, debug=True)
-=======
-    app.run(port=5000, debug=True)
->>>>>>> cf6783f1bcbac07850875b183117e57361e536a8
->>>>>>> Stashed changes
